@@ -97,9 +97,9 @@ bfc-cut demo
 ## Engine
 
 Frozen copy of the shared
-[BoardFootCalc Desktop Lumber Calculation Engine](https://boardfootcalc.net/) in `src/core/`
+[BoardFootCalc Desktop Lumber Calculation Engine](https://boardfootcalc.net/board-foot-cut-list-calculator/) in `src/core/`
 — board feet, units, thickness parsing and yield math are identical across
-all five tools and the [online calculators](https://boardfootcalc.net/).
+all five tools and the [online calculators](https://boardfootcalc.net/board-foot-cut-list-calculator/).
 
 ## Tests
 

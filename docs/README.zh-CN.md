@@ -1,6 +1,6 @@
 # bfc-cut — 板材排样与切割优化器
 
-> 英文原版：[English](../README.md) · 在线计算器：[https://boardfootcalc.net](https://boardfootcalc.net/)
+> 英文原版：[English](../README.md) · 在线计算器：[https://boardfootcalc.net/board-foot-cut-list-calculator/](https://boardfootcalc.net/board-foot-cut-list-calculator/)
 
 在下锯之前，为每一块板材生成真实的**二维切割排样图**。考虑锯缝的 guillotine 切割，支持纹理与缺陷约束、五种评分策略，可打印 SVG / PDF 切割图与 CSV 导出 — 补上切割清单与锯机之间的缺失环节。
 
@@ -37,7 +37,7 @@ bfc-cut plan --boards boards.csv --parts parts.csv --strategy balanced
 
 ## 计算引擎
 
-本工具内置了共享的 [BoardFootCalc Desktop 木材计算引擎](https://boardfootcalc.net)
+本工具内置了共享的 [BoardFootCalc Desktop 木材计算引擎](https://boardfootcalc.net/board-foot-cut-list-calculator/)
 的冻结副本（位于 `src/core/`，涵盖板尺、单位、标称/实际厚度、四分之一厚度、
 浪费系数、木种、计价与 CSV）。五个工具共用同一套数学逻辑，因此这里算出的数字
 与网站上的在线计算器完全一致。
