@@ -44,7 +44,7 @@ and [Board Feet vs Square Feet](https://boardfootcalc.net/board-feet-vs-square-f
 ## Install
 
 ```bash
-git clone <your-repo-url> bfc-cut
+git clone https://github.com/anleeylee/board-cutting-optimizer bfc-cut
 cd bfc-cut
 npm install
 npm run build

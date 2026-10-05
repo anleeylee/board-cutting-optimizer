@@ -19,7 +19,7 @@
 ## 安装
 
 ```bash
-git clone <your-repo-url> 03-board-cutting-optimizer
+git clone https://github.com/anleeylee/board-cutting-optimizer 03-board-cutting-optimizer
 cd 03-board-cutting-optimizer
 npm install
 npm run build        # 编译到 dist/
