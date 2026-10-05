@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>board-cutting-optimizer — Board Layout & Cutting Optimizer | Lumber Board Foot Tools</title>
+<meta name="description" content="Generate real 2D guillotine cutting layouts for every board. Grain, kerf and defect aware, with SVG / PDF cutting sheets and CSV exports.">
+<meta name="keywords" content="lumber, board feet, woodworking, bfc-cut, Board, Layout, &, Cutting, Optimizer, cut list, kerf, waste, wood shop, diy">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "board-cutting-optimizer",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Windows, macOS, Linux",
+  "description": "Generate real 2D guillotine cutting layouts for every board. Grain, kerf and defect aware, with SVG / PDF cutting sheets and CSV exports.",
+  "url": "https://github.com/anleeylee/board-cutting-optimizer",
+  "author": { "@type": "Organization", "name": "BoardFootCalc", "url": "https://boardfootcalc.net" },
+  "softwareVersion": "1.0.0",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.6; color: #222; background: #fff; }
+  header { background: #1f2d3d; color: #fff; padding: 40px 20px; }
+  header h1 { margin: 0 0 8px; font-size: 28px; }
+  header p { margin: 0; opacity: .92; max-width: 860px; }
+  main { max-width: 880px; margin: 0 auto; padding: 24px 20px 48px; }
+  h2 { border-bottom: 2px solid #eee; padding-bottom: 6px; margin-top: 36px; }
+  code { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; font-size: .92em; }
+  pre { background: #f6f8fa; border: 1px solid #e1e4e8; border-radius: 6px; padding: 14px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  ul { padding-left: 22px; }
+  .links a { margin-right: 14px; white-space: nowrap; }
+  .badge { display: inline-block; background: #eef2f6; border: 1px solid #d4dae2; color: #444; border-radius: 12px; padding: 2px 10px; font-size: 13px; margin: 0 6px 6px 0; }
+  footer { border-top: 1px solid #eee; color: #777; font-size: 14px; padding: 18px 20px 40px; text-align: center; }
+  footer a { color: #1a73e8; }
+  @media (prefers-color-scheme: dark) {
+    :root { color-scheme: dark; }
+    body { background: #0d1117; color: #e6edf3; }
+    header { background: #161b22; border-bottom: 1px solid #30363d; }
+    h2 { border-bottom-color: #30363d; }
+    code, pre { background: #161b22; }
+    pre { border-color: #30363d; }
+    .badge { background: #21262d; border-color: #30363d; color: #c9d1d9; }
+    footer { border-top-color: #30363d; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Board Layout & Cutting Optimizer</h1>
+  <p>Generate an actual <strong>2D cutting layout for every board</strong> before you touch the saw. Kerf-aware guillotine cutting with grain and defect constraints, five scoring strategies, and printable SVG / PDF cutting sheets plus CSV exports — the missing link between a cut list and the saw.</p>
+  <p style="margin-top:14px">
+    <span class="badge">TypeScript</span><span class="badge">Node.js ≥ 18</span><span class="badge">MIT License</span><span class="badge">14 tests</span>
+  </p>
+</header>
+<main>
+  <section>
+    <p>Part of the open-source <a href="https://boardfootcalc.net">BoardFootCalc</a> desktop tool suite — the same board-foot math as the
+    <a href="https://boardfootcalc.net">online lumber calculators</a>, offline and scriptable on your own machine.</p>
+  </section>
+
+  <h2>Features</h2>
+  <ul><li><strong>Real 2D guillotine layout</strong> — parts are placed on each board, every cut splits the remaining free rectangles into two, and each cut consumes the <strong>kerf</strong> width (default 1/8").</li>
+<li><strong>Defect zones</strong> — free space is cut around marked defect rectangles; parts never land on a defect.</li>
+<li><strong>Grain & edge constraints</strong> — vertical-grain parts and edge-required parts (<code>one-clean</code> / <code>two-clean</code>) are never rotated when the grain constraint is on.</li>
+<li><strong>5 strategies</strong> — <code>max-yield</code>, <code>min-waste</code>, <code>min-cuts</code>, <code>grain-priority</code>, <code>balanced</code>.</li>
+<li><strong>Trim / joint / plane allowances</strong> — cut-to-size logic for real workshops.</li>
+<li><strong>Offcut policy</strong> — minimum offcut length worth keeping, leftovers counted in yield.</li>
+<li><strong>Exports</strong> — SVG cutting sheets (true scale, labeled parts, defect marks), PDF cutting plan (one page per board + cut sequence), CSV placements / cut-sequences / summary, full JSON.</li></ul>
+
+  <h2>Quick start</h2>
+  <pre><code>npm run demo
+bfc-cut plan --boards boards.csv --parts parts.csv --strategy balanced</code></pre>
+  <p>Full CLI reference, input formats and design notes are in the <a href="https://github.com/anleeylee/board-cutting-optimizer">repository README</a>.</p>
+
+  <h2>Learn the math</h2>
+  <p>[Board Foot Cut List Calculator](https://boardfootcalc.net/board-foot-cut-list-calculator/) · [How to Calculate Board Feet](https://boardfootcalc.net/how-to-calculate-board-feet/) · [Board Feet vs Square Feet](https://boardfootcalc.net/board-feet-vs-square-feet/)</p>
+
+  <h2>学习资料（中文）</h2>
+  <p>[板尺切割清单计算器](https://boardfootcalc.net/board-foot-cut-list-calculator/) · [如何计算板尺](https://boardfootcalc.net/how-to-calculate-board-feet/) · [板尺与平方英尺的区别](https://boardfootcalc.net/board-feet-vs-square-feet/)</p>
+</main>
+<footer>
+  <a href="https://boardfootcalc.net">BoardFootCalc.net</a> — free board foot calculators, lumber guides and woodworking tools · MIT licensed open-source project.
+</footer>
+</body>
+</html>
