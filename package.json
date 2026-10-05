@@ -1,0 +1,46 @@
+{
+  "name": "@boardfootcalc/board-cutting-optimizer",
+  "version": "1.0.0",
+  "description": "Generate an actual 2D cutting layout for every board — kerf-aware guillotine cutting, grain & defect constraints, and printable SVG/PDF cutting sheets.",
+  "type": "commonjs",
+  "main": "dist/features/index.js",
+  "bin": {
+    "bfc-cut": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "sample-data"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "start": "node dist/cli.js",
+    "demo": "node dist/cli.js demo"
+  },
+  "keywords": [
+    "lumber",
+    "cutting",
+    "optimizer",
+    "cut-list",
+    "guillotine",
+    "board-foot",
+    "kerf",
+    "woodworking"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "pdfkit": "^0.15.0",
+    "xlsx": "^0.18.5",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/pdfkit": "^0.17.6",
+    "typescript": "^5.5.4",
+    "vitest": "^2.1.8"
+  }
+}
